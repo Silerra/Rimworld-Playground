@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ScenarioDef>
+    <defName>ProjektAbenteuer</defName>
+    <label>Projekt Abenteuer</label>
+    <description>Du willst dich alleine auf dem Weg machen und einen neuen Planeten erkunden? Aber sei gewarnt! Erwarte keine Unterstützung von deinem Volk von dem du gehen wirst! Es ist deine neue Herrschaft den du erkründen wirst. Wir bleiben außen vor.
+
+Ich erlaube dir ein zufälliges Tier mitzunehmen. Von unserem Team bekommst du noch einen Labrador den du trainieren kannst. Es dient auch zur wissentschaftlichen Zwecken, um zu sehen wie die Tiere auf langen Reise reagieren.
+Vergiss nicht etwas Medizin und Überlebensrationen mitzunehmen! Die neue Welt kann ganz schön rau sein.
+    </description>
+    <scenario>
+      <summary>Eine Reise ins ungewisse. Ohne Unterstützung des Heimatplanetens.</summary>
+      <playerFaction>
+        <def>PlayerFaction</def>
+        <factionDef>PlayerColony</factionDef>
+      </playerFaction>
+      <parts>
+        
+        <!-- Config pages -->
+        <li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
+          <def>ConfigPage_ConfigureStartingPawns</def>
+          <pawnCount>1</pawnCount>
+        </li>
+        
+        <!-- Player starting stuff spawn method -->
+        <li Class="ScenPart_PlayerPawnsArriveMethod">
+          <def>PlayerPawnsArriveMethod</def>
+          <method>DropPods</method>
+          <visible>false</visible>
+        </li>
+        
+        <!-- Player pawns modifiers -->
+        <li Class="ScenPart_ForcedHediff">
+          <def>ForcedHediff</def>
+          <visible>false</visible>
+          <context>PlayerStarter</context>
+          <chance>0.76</chance>
+          <hediff>CryptosleepSickness</hediff>
+
+          <severityRange>
+            <min>0.25</min>
+            <max>0.84</max>
+          </severityRange>
+        </li>
+        
+        <!-- Disabled things -->
+        <li Class="ScenPart_DisableIncident">
+          <def>DisableIncident</def>
+          <incident>ResourcePodCrash</incident>
+        </li>
+        
+        <!-- Starting research -->
+        <li Class="ScenPart_StartingResearch">
+          <def>StartingResearch</def>
+          <project>PassiveCooler</project>
+        </li>
+        
+        <!-- Player starting things -->
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Gun_SurvivalRifle</thingDef>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>MealSurvivalPack</thingDef>
+          <count>16</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Medicine</thingDef>
+          <count>32</count>
+        </li>
+        <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Component</thingDef>
+          <count>48</count>
+        </li>
+        <li Class="ScenPart_StartingAnimal">
+          <def>StartingAnimal</def>
+          <animalKind>LabradorRetriever</animalKind>
+          <count>1</count>
+        </li>
+        <li Class="ScenPart_StartingAnimal">
+          <def>StartingAnimal</def>
+          <count>1</count>
+        </li>
+        
+        <!-- Scatter some things near player start -->
+        <li Class="ScenPart_ScatterThingsNearPlayerStart">
+          <def>ScatterThingsNearPlayerStart</def>
+          <thingDef>WoodLog</thingDef>
+          <count>512</count>
+        </li>
+        <!-- Scatter some things anywhere -->
+        <li Class="ScenPart_ScatterThingsAnywhere">
+          <def>ScatterThingsAnywhere</def>
+          <thingDef>ChunkSlagSteel</thingDef>
+          <count>1000</count>
+        </li>
+        
+        <!-- Game start dialog -->
+        <li Class="ScenPart_GameStartDialog">
+          <def>GameStartDialog</def>
+          <text>Dein Schiff befindet sich jetzt in Orbit einer neuen unbekannten Planeten. Jetzt ist überleben angesagt!
+Leider ist das Schiff nicht zum Landen geeignet und muss dich über eine Rettengskapsel auf dem Planeten begeben...</text>
+        </li>
+
+      </parts>
+    </scenario>
+  </ScenarioDef>
+
+</Defs>
