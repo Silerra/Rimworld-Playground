@@ -13,7 +13,7 @@ Vergiss nicht etwas Medizin und Überlebensrationen mitzunehmen! Die neue Welt k
       <summary>Eine Reise ins ungewisse. Ohne Unterstützung des Heimatplanetens.</summary>
       <playerFaction>
         <def>PlayerFaction</def>
-        <factionDef>PlayerColony</factionDef>
+        <factionDef>PlayerExplorer</factionDef>
       </playerFaction>
       <parts>
         
